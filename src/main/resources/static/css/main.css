@@ -3,10 +3,54 @@ body {
 }
 
 .head {
-    width: 50%;
+    width: 95%;
     height: 100px;
     background: transparent;
+    text-align: center;
+}
+
+
+.footer {
+    width: 95%;
+    height: auto;
+    background: transparent;
+    text-align: left;
+
+}
+
+
+.border-style {
     border: 1px solid paleturquoise;
     border-radius: 15px;
     box-shadow: 10px 10px 10px darkturquoise;
+}
+
+
+.font-style {
+    color: cornflowerblue;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+}
+
+
+.middle {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.top {
+    top: 10%;
+}
+
+
+.middle-top {
+    top: 50%;
+}
+
+
+.bottom {
+    bottom: 0%;
 }
