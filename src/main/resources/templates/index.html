@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
+    <script src="/static/js/main.js"/>
     <title>Online-calculator</title>
 </head>
 <body>
@@ -10,13 +11,22 @@
         <h1>Online Calculator</h1>
     </div>
     <div class="web-content middle middle-top border-style font-style">
-        <form class="flex">
-            <div class="numbers">
-                <p1>INPUT VALUES <input /></p1>
-                <p1>RESPONSE VALUES<input /></p1>
+        <form action="#" th:action="@{/index}" th:object="${calculator}" method="post" class="flex calculator-form">
+            <div class="numbers margin">
+                <p1>First number: <input  type="text" th:field="*{firstNumber}"/></p1>
+                <p1>Second number: <input  type="text" th:field="*{secondNumber}"/></p1>
+            </div>
+            <!--div class="calculator-actions border-style font-style margin"
+                 th:field="*{action}" th:attr="data-actions=*{actions}"-->
+            <div class="calculator-actions border-style font-style margin">
+                <tr th:each="action: *{actions}">
+                    <!--input type="checkbox" th:field="*{action}"/-->
+                    <div th:text="${action}" class="calculator-action border-style font-style margin"/>
+                    <!--script>getCalculatorActionButtons()</script-->
+                </tr >
             </div>
         </form>
-
+        <script>alertResult()</script>
     </div>
     <div class="footer middle bottom font-style border-style">
         <h1>Basic footer</h1>
