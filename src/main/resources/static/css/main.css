@@ -70,3 +70,35 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.calculator-actions {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.margin {
+    margin: 10px;
+}
+
+
+.calculator-form {
+    flex-direction: column;
+}
+
+
+.calculator-action {
+    width: 10%;
+    height: auto;
+    text-align: center;
+}
+
+.border-style-red {
+    border: 1px solid red;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px darkred;
+}
