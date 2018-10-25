@@ -56,5 +56,5 @@ function mathExpression(data) {
 
     let result = data.result > 0 ? data.result: "" + data.result + "";
 
-    return data.firstNumber + " " + data.action + " " + secondNumber +  " = " + result)
+    return data.firstNumber + " " + data.action + " " + secondNumber +  " = " + result;
 }
