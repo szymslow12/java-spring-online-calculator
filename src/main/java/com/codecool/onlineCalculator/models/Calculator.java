@@ -4,7 +4,7 @@ public class Calculator {
 
     private double firstNumber;
     private double secondNumber;
-    private String[] actions = new String[] {"+", "-", "*", "\\\\"};
+    private String[] actions = new String[] {"+", "-", "*", "\\\"};
     private Action action;
     private double result;
 
@@ -35,7 +35,7 @@ public class Calculator {
 
 
     public String getAction() {
-        return action != null ? action.toString(): "null";
+        return action != null ? action.toString(): null;
     }
 
 
