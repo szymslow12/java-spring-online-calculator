@@ -1,18 +1,31 @@
 "use strict"
 
 function setCalculatorAction(chosenAction) {
-    let calculatorActions = document.getElementById("calculator-action");
-    console.log(calculatorActions);
-    if (calculatorActions.getAttribute("value") !== "null") {
-        calculatorActions.setAttribute("value", "null");
+    let chosenCalculatorAction = document.getElementById("chosen-calculator-action");
+    reversePreviousChoice(chosenCalculatorAction);
+
+    let value = chosenCalculatorAction.getAttribute("value");
+    let actionName = getActionName(chosenAction.getAttribute("value"));
+
+    if (value !== "null" & value !== "") {
+        chosenCalculatorAction.setAttribute("value", "null");
     } else {
-        calculatorActions.setAttribute("value",
-            getActionName(
-                chosenAction.getAttribute("value")
-            )
-        );
+        chosenCalculatorAction.setAttribute("value", actionName);
     }
     changeColor(chosenAction);
+}
+
+function reversePreviousChoice(chosenCalculatorAction) {
+    let calculatorActions = document.getElementsByClassName("calculator-action");
+    chosenCalculatorAction.setAttribute("value", "null");
+    for (let i = 0; i < calculatorActions.length; i++) {
+        let calculatorAction = calculatorActions[i];
+        let className = calculatorAction.getAttribute("class");
+        if (className.includes("red")) {
+            calculatorAction.setAttribute("class", className.replace("-red", ""));
+        }
+    }
+    chosenCalculatorAction.setAttribute("value", "null");
 }
 
 
@@ -38,6 +51,7 @@ function changeColor(button) {
 
 
 function alertResult(calculator) {
+    console.log(calculator);
     if (isAction(calculator.action)) {
         alert(mathExpression(calculator));
     }
@@ -45,7 +59,12 @@ function alertResult(calculator) {
 
 
 function isAction(action) {
-    return action | !action.includes('null');
+    console.log(action);
+    if (action) {
+        return !action.includes('null');
+    }
+    //return action & !action.includes('null');
+    return false;
 }
 
 
