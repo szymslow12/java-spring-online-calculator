@@ -15,7 +15,7 @@
             <div class="numbers margin">
                 <p1>First number: <input  type="text" th:field="*{firstNumber}"/></p1>
                 <p1>Second number: <input  type="text" th:field="*{secondNumber}"/></p1>
-            </div
+            </div>
             <div class="calculator-actions border-style font-style margin">
                 <input class="invisible" th:field="*{action}" id="calculator-action"/>
                 <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
