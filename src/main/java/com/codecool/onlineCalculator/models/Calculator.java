@@ -1,5 +1,8 @@
 package com.codecool.onlineCalculator.models;
 
+import com.codecool.onlineCalculator.models.actions.Action;
+import com.codecool.onlineCalculator.models.actions.ActionFactory;
+
 public class Calculator {
 
     private double firstNumber;
