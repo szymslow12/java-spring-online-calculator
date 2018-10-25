@@ -39,7 +39,7 @@ public class Calculator {
     }
 
 
-    public double result() {
+    private double result() {
         result = action != null ? action.result(firstNumber, secondNumber): 0.0;
         return result;
     }
@@ -49,16 +49,7 @@ public class Calculator {
         return result();
     }
 
-    /*public String getActions() {
-        StringBuilder jsonArray = new StringBuilder("[");
-        for (int i = 0; i < actions.length; i++) {
-            jsonArray.append(String.format("\"%s\",", actions[i]));
-//            jsonArray.append(String.format("\"%s\"=\"%s\",", "number" + i, actions[i]));
-        }
-        jsonArray.deleteCharAt(jsonArray.lastIndexOf(","));
-        jsonArray.append("]");
-        return jsonArray.toString();
-    }*/
+
     public String[] getActions() {
         return this.actions;
     }
