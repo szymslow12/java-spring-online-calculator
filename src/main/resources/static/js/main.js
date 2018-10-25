@@ -38,11 +38,23 @@ function changeColor(button) {
 
 
 function alertResult(calculator) {
-    console.log(calculator);
-    let operation = (n1, n2) => {
-
-    };
-    if (calculator.action | !calculator.action.includes('null')) {
-        alert(calculator.firstNumber + " " + calculator.action + " " + calculator.secondNumber +  " = " + calculator.result);
+    if (isAction(calculator.action)) {
+        alert(mathExpression(calculator));
     }
+}
+
+
+function isAction(action) {
+    return action | !action.includes('null');
+}
+
+
+function mathExpression(data) {
+
+    let secondNumber = data.secondNumber > 0 ?
+        data.secondNumber: "(" + data.secondNumber + ")";
+
+    let result = data.result > 0 ? data.result: "" + data.result + "";
+
+    return data.firstNumber + " " + data.action + " " + secondNumber +  " = " + result)
 }
