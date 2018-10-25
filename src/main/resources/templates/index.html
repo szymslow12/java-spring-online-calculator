@@ -18,15 +18,24 @@
             </div>
             <!--div class="calculator-actions border-style font-style margin"
                  th:field="*{action}" th:attr="data-actions=*{actions}"-->
+            <!--div class="calculator-actions border-style font-style margin">
+                <label th:each="action: *{actions}" th:value="${action}" th:text="${action}"
+                       class="calculator-action border-style font-style margin">
+                    <input type="checkbox" th:value="${action}"/>
+                </label-->
             <div class="calculator-actions border-style font-style margin">
-                <tr th:each="action: *{actions}">
-                    <!--input type="checkbox" th:field="*{action}"/-->
-                    <div th:text="${action}" class="calculator-action border-style font-style margin"/>
-                    <!--script>getCalculatorActionButtons()</script-->
-                </tr >
+                <input class="invisible" th:field="*{action}" id="calculator-action"/>
+                <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
+                     class="calculator-action border-style font-style margin" onclick="setCalculatorAction(this)">
+                </div>
             </div>
+            <input type="submit" value="Submit" class="calculator-action border-style font-style margin"/>
         </form>
-        <script>alertResult()</script>
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            alertResult([[${calculator}]]);
+            /*]]>*/
+        </script>
     </div>
     <div class="footer middle bottom font-style border-style">
         <h1>Basic footer</h1>
