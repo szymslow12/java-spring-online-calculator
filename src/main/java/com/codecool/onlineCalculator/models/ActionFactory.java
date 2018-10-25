@@ -6,6 +6,12 @@ public class ActionFactory {
         switch (name) {
             case "addition":
                 return new Addition();
+            case "subtraction":
+                return new Subtraction();
+            case "multiplication":
+                return new Multiplication();
+            case "division":
+                return new Division();
             default:
                 throw new IllegalArgumentException("Bad action!");
         }
