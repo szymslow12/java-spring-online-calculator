@@ -37,10 +37,12 @@ function changeColor(button) {
 }
 
 
-function alertResult(action, result, numbers) {
-    /*console.log(action);
-    if (action | !action.includes('null')) {
-        alert(numbers[0] + " " + action + " " + numbers[1] +  " = " + result);
-    }*/
-    console.log(action);
+function alertResult(calculator) {
+    console.log(calculator);
+    let operation = (n1, n2) => {
+
+    };
+    if (calculator.action | !calculator.action.includes('null')) {
+        alert(calculator.firstNumber + " " + calculator.action + " " + calculator.secondNumber +  " = " + calculator.result);
+    }
 }
