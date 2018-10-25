@@ -34,6 +34,10 @@ function getActionName(actionSign) {
         return "addition";
     } else if (actionSign === "-") {
         return "subtraction";
+    } else if (actionSign === "*") {
+        return "multiplication";
+    } else if (actionSign === "\\") {
+        return "division";
     } else {
         return "null";
     }
