@@ -1,4 +1,4 @@
-package com.codecool.onlineCalculator.models;
+package com.codecool.onlineCalculator.models.actions;
 
 public interface Action {
 

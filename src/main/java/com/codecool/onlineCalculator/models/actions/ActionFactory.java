@@ -1,4 +1,6 @@
-package com.codecool.onlineCalculator.models;
+package com.codecool.onlineCalculator.models.actions;
+
+import com.codecool.onlineCalculator.models.actions.*;
 
 public class ActionFactory {
 
