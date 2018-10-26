@@ -10,13 +10,13 @@
     <div class="head middle top font-style border-style">
         <h1>Online Calculator</h1>
     </div>
-    <div class="web-content middle middle-top border-style font-style">
-        <form action="#" th:action="@{/index}" th:object="${calculator}" method="post" class="flex calculator-form">
+    <div class="web-content middle middle-top border-style font-style flex">
+        <form action="#" th:action="@{/index}" th:object="${calculator}" method="post" class="flex calculator-form border-style">
             <div class="numbers margin">
                 <p1 class="number">First number: <input  type="text" th:field="*{firstNumber}"/></p1>
                 <p1 class="number">Second number: <input  type="text" th:field="*{secondNumber}"/></p1>
             </div>
-            <div class="calculator-actions border-style font-style margin">
+            <!--div class="calculator-actions border-style font-style margin">
                 <input class="invisible" th:field="*{action}" id="chosen-calculator-action" value="null"/>
                 <div class="basic-actions-container flex flex-column border-style font-style margin">
                     <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
@@ -24,17 +24,26 @@
                     </div>
                     <script>setActionSigns()</script>
                 </div>
+            </div-->
+            <div class="basic-actions-container flex font-style margin">
+                <input th:field="*{action}" id="chosen-calculator-action" value="null" hidden="true"/>
+                <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
+                     class="basic-action border-style font-style action-margin" onclick="setCalculatorAction(this)">
+                </div>
+                <script>setActionSigns()</script>
             </div>
             <div class="calculator-button-container flex margin">
                 <input type="submit" value="Submit" class="calculator-button border-style font-style margin"/>
                 <input type="reset" value="Reset" class="calculator-button border-style font-style margin"/>
             </div>
         </form>
-        <script th:inline="javascript">
-            /*<![CDATA[*/
-            alertResult([[${calculator}]]);
-            /*]]>*/
-        </script>
+        <p1 class="result font-style margin">
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                getResult([[${calculator}]]);
+                /*]]>*/
+            </script>
+        </p1>
     </div>
     <div class="footer middle bottom font-style border-style">
         <h1>Basic footer</h1>
