@@ -27,7 +27,7 @@ body {
 
 
 .font-style {
-    color: cornflowerblue;
+    color: #292F33;
     text-shadow: 2px 2px black;
     letter-spacing: 1px;
 }
@@ -71,13 +71,17 @@ body {
     justify-content: center;
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
 .calculator-actions {
     width: 50%;
-    height: 100px;
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 
@@ -92,7 +96,7 @@ body {
 
 
 .calculator-action {
-    width: 10%;
+    width: auto;
     height: auto;
     text-align: center;
 }
@@ -103,9 +107,53 @@ body {
     box-shadow: 10px 10px 10px darkred;
 }
 
+.border-style-clicked {
+    border: 1px solid navajowhite;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px darkcyan;
+    background: paleturquoise;
+}
+
 
 .invisible {
     width: 0%;
     height: 0%;
     background: transparent;
+}
+
+
+.basic-actions-container {
+    width: auto;
+    height: auto;
+}
+
+.basic-action {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.action-margin {
+    margin: 5px;
+}
+
+.calculator-button {
+    width: auto;
+    height: auto;
+    text-align: center;
+    background: transparent;
+    font-size: 50px;
+}
+
+.calculator-button-container {
+    width: 50%;
+    height: auto;
+    justify-content: space-around;
+}
+
+.number {
+    font-size: 20px;
+    text-shadow: 1px 1px black;
 }
