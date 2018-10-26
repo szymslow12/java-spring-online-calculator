@@ -22,7 +22,7 @@ body {
 .border-style {
     border: 1px solid paleturquoise;
     border-radius: 15px;
-    box-shadow: 10px 10px 10px darkturquoise;
+    box-shadow: 5px 5px 5px #0299d1;
 }
 
 
@@ -76,7 +76,7 @@ body {
 }
 
 .calculator-actions {
-    width: 50%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -92,6 +92,7 @@ body {
 
 .calculator-form {
     flex-direction: column;
+    width: 50%;
 }
 
 
@@ -104,13 +105,13 @@ body {
 .border-style-red {
     border: 1px solid red;
     border-radius: 15px;
-    box-shadow: 10px 10px 10px darkred;
+    box-shadow: 5px 5px 5px darkred;
 }
 
 .border-style-clicked {
     border: 1px solid navajowhite;
     border-radius: 15px;
-    box-shadow: 10px 10px 10px darkcyan;
+    box-shadow: 5px 5px 5px darkcyan;
     background: paleturquoise;
 }
 
@@ -123,7 +124,7 @@ body {
 
 
 .basic-actions-container {
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
@@ -131,7 +132,7 @@ body {
     width: 90%;
     height: auto;
     text-align: center;
-    font-size: 50px;
+    font-size: 100px;
 
 }
 
@@ -144,7 +145,7 @@ body {
     height: auto;
     text-align: center;
     background: transparent;
-    font-size: 50px;
+    font-size: 100px;
 }
 
 
@@ -153,7 +154,7 @@ body {
 }
 
 .calculator-button-container {
-    width: 50%;
+    width: 49%;
     height: auto;
     justify-content: space-around;
 }
@@ -161,4 +162,12 @@ body {
 .number {
     font-size: 20px;
     text-shadow: 1px 1px black;
+}
+
+
+.result {
+    width: 49%;
+    height: 25%;
+    font-size: 100px;
+    text-align: center;
 }
