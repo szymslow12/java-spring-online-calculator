@@ -1,7 +1,5 @@
 package com.codecool.onlineCalculator.models.actions;
 
-import com.codecool.onlineCalculator.models.actions.Action;
-
 public class Addition implements Action {
 
     @Override
