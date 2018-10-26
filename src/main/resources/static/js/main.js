@@ -36,7 +36,7 @@ function getActionName(actionSign) {
         return "subtraction";
     } else if (actionSign === "*") {
         return "multiplication";
-    } else if (actionSign === "\\") {
+    } else if (actionSign === "\\\\") {
         return "division";
     } else {
         return "null";
