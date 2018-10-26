@@ -7,7 +7,7 @@ public class Calculator {
 
     private double firstNumber;
     private double secondNumber;
-    private String[] actions = new String[] {"+", "-", "*", "\\"};
+    private String[] actions = new String[] {"+", "-", "*", "\\\\"};
     private Action action;
     private double result;
 
