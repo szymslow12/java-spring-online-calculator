@@ -89,7 +89,7 @@ function setActionSigns() {
         let paragraph = document.createElement("p1");
         paragraph.innerHTML = "<p1>" + getSign(basicAction.firstChild.textContent) + "</p1>";
         basicAction.firstChild.textContent = "";
-        basicAction.appendChild(paragraph)
+        basicAction.appendChild(paragraph);
     }
 }
 
