@@ -16,13 +16,13 @@ function setCalculatorAction(chosenAction) {
 }
 
 function reversePreviousChoice(chosenCalculatorAction) {
-    let calculatorActions = document.getElementsByClassName("calculator-action");
+    let calculatorActions = document.getElementsByClassName("basic-action");
     chosenCalculatorAction.setAttribute("value", "null");
     for (let i = 0; i < calculatorActions.length; i++) {
         let calculatorAction = calculatorActions[i];
         let className = calculatorAction.getAttribute("class");
-        if (className.includes("red")) {
-            calculatorAction.setAttribute("class", className.replace("-red", ""));
+        if (className.includes("clicked")) {
+            calculatorAction.setAttribute("class", className.replace("-clicked", ""));
         }
     }
     chosenCalculatorAction.setAttribute("value", "null");
@@ -45,11 +45,11 @@ function getActionName(actionSign) {
 
 
 function changeColor(button) {
-    let classNames = "calculator-action border-style font-style margin";
-    if (button.getAttribute("class").includes("red")) {
-        button.setAttribute("class", classNames.replace("-red", ""));
+    let classNames = "basic-action border-style font-style action-margin";
+    if (button.getAttribute("class").includes("clicked")) {
+        button.setAttribute("class", classNames.replace("-clicked", ""));
     } else {
-        button.setAttribute("class", classNames.replace("border-style", "border-style-red"));
+        button.setAttribute("class", classNames.replace("border-style", "border-style-clicked"));
     }
 }
 
@@ -67,7 +67,6 @@ function isAction(action) {
     if (action) {
         return !action.includes('null');
     }
-    //return action & !action.includes('null');
     return false;
 }
 
@@ -80,4 +79,32 @@ function mathExpression(data) {
     let result = data.result > 0 ? data.result: "" + data.result + "";
 
     return data.firstNumber + " " + data.action + " " + secondNumber +  " = " + result;
+}
+
+
+function setActionSigns() {
+    let basicActions = document.getElementsByClassName("basic-action");
+    for (let i = 0; i < basicActions.length; i++) {
+        let basicAction = basicActions[i];
+        let paragraph = document.createElement("p1");
+        paragraph.innerHTML = "<p1>" + getSign(basicAction.firstChild.textContent) + "</p1>";
+        basicAction.firstChild.textContent = "";
+        basicAction.appendChild(paragraph)
+    }
+}
+
+
+function getSign(actionSign) {
+    console.log(actionSign);
+    if (actionSign === "+") {
+        return "&#10133;";
+    } else if (actionSign === "-") {
+        return "&#10134;";
+    } else if (actionSign === "*") {
+        return "&#10006;";
+    } else if (actionSign === "\\\\") {
+        return "&#10135;";
+    } else {
+        return "none";
+    }
 }
