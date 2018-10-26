@@ -54,16 +54,17 @@ function changeColor(button) {
 }
 
 
-function alertResult(calculator) {
-    console.log(calculator);
+function getResult(calculator) {
+    let resultContainer = document.getElementsByClassName("result")[0];
     if (isAction(calculator.action)) {
-        alert(mathExpression(calculator));
+        resultContainer.firstChild.textContent = mathExpression(calculator);
+    } else {
+        resultContainer.firstChild.textContent = "Numbers are not submitted!";
     }
 }
 
 
 function isAction(action) {
-    console.log(action);
     if (action) {
         return !action.includes('null');
     }
