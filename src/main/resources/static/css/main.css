@@ -168,6 +168,11 @@ body {
 .result {
     width: 49%;
     height: 25%;
-    font-size: 100px;
+    font-size: 20px;
+    text-shadow: 1px 1px black;
     text-align: center;
+}
+
+.input-number {
+    color: chartreuse;
 }
