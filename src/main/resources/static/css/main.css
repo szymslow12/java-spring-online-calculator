@@ -10,14 +10,15 @@ body {
 }
 
 
-.footer {
+#footer {
     width: 95%;
     height: auto;
     background: transparent;
     text-align: left;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
 
 }
-
 
 .border-style {
     border: 1px solid paleturquoise;
@@ -175,4 +176,9 @@ body {
 
 .input-number {
     color: chartreuse;
+}
+
+
+.space-around {
+    justify-content: space-around;
 }
