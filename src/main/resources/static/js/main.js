@@ -2,7 +2,7 @@
 
 function setCalculatorAction(chosenAction) {
     let chosenCalculatorAction = document.getElementById("chosen-calculator-action");
-    reversePreviousChoice(chosenCalculatorAction);
+    reversePreviousActionChoice(chosenCalculatorAction);
 
     let value = chosenCalculatorAction.getAttribute("value");
     let actionName = getActionName(chosenAction.getAttribute("value"));
@@ -15,7 +15,7 @@ function setCalculatorAction(chosenAction) {
     changeColor(chosenAction);
 }
 
-function reversePreviousChoice(chosenCalculatorAction) {
+function reversePreviousActionChoice(chosenCalculatorAction) {
     let calculatorActions = document.getElementsByClassName("basic-action");
     chosenCalculatorAction.setAttribute("value", "null");
     for (let i = 0; i < calculatorActions.length; i++) {
@@ -25,7 +25,6 @@ function reversePreviousChoice(chosenCalculatorAction) {
             calculatorAction.setAttribute("class", className.replace("-clicked", ""));
         }
     }
-    chosenCalculatorAction.setAttribute("value", "null");
 }
 
 
@@ -58,6 +57,8 @@ function getResult(calculator) {
     let resultContainer = document.getElementsByClassName("result")[0];
     if (isAction(calculator.action)) {
         resultContainer.firstChild.textContent = mathExpression(calculator);
+        addBreakLines(resultContainer);
+        resetAll();
     } else {
         resultContainer.firstChild.textContent = "Numbers are not submitted!";
     }
@@ -69,6 +70,14 @@ function isAction(action) {
         return !action.includes('null');
     }
     return false;
+}
+
+function addBreakLines(resultContainer) {
+    let resultContainerHtml = resultContainer.innerHTML;
+    while (resultContainerHtml.includes("\n")) {
+        resultContainer.innerHTML = resultContainerHtml.replace("\n", "<br/>");
+        resultContainerHtml = resultContainer.innerHTML;
+    }
 }
 
 
@@ -108,4 +117,16 @@ function getSign(actionSign) {
     } else {
         return "none";
     }
+}
+
+
+function resetAll() {
+    let numbersFields = document.getElementsByClassName("number");
+    for (let i = 0; i < numbersFields.length; i++) {
+        let numberField = numbersFields[i];
+        console.log(numberField.childNodes[1]);
+        numberField.childNodes[1].setAttribute("value", "0");
+    }
+    reversePreviousActionChoice(document.getElementById("chosen-calculator-action"));
+
 }
