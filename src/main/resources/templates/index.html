@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
-    <script src="/static/js/main.js"/>
+    <script src="/static/js/main.js"></script>
     <title>Online-calculator</title>
 </head>
 <body>
@@ -16,15 +16,6 @@
                 <p1 class="number">First number: <input  type="text" th:field="*{firstNumber}"/></p1>
                 <p1 class="number">Second number: <input  type="text" th:field="*{secondNumber}"/></p1>
             </div>
-            <!--div class="calculator-actions border-style font-style margin">
-                <input class="invisible" th:field="*{action}" id="chosen-calculator-action" value="null"/>
-                <div class="basic-actions-container flex flex-column border-style font-style margin">
-                    <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
-                         class="basic-action border-style font-style action-margin" onclick="setCalculatorAction(this)">
-                    </div>
-                    <script>setActionSigns()</script>
-                </div>
-            </div-->
             <div class="basic-actions-container flex font-style margin">
                 <input th:field="*{action}" id="chosen-calculator-action" value="null" hidden="true"/>
                 <div th:each="action: *{actions}" th:value="${action}" th:text="${action}"
@@ -34,7 +25,7 @@
             </div>
             <div class="calculator-button-container flex margin">
                 <input type="submit" value="Submit" class="calculator-button border-style font-style margin"/>
-                <input type="reset" value="Reset" class="calculator-button border-style font-style margin"/>
+                <input type="reset" value="Reset" onclick="resetAll()" class="calculator-button border-style font-style margin"/>
             </div>
         </form>
         <p1 class="result font-style margin">
@@ -45,8 +36,13 @@
             </script>
         </p1>
     </div>
-    <div class="footer middle bottom font-style border-style">
-        <h1>Basic footer</h1>
+    <div class="flex space-around middle bottom font-style border-style" id="footer">
+        <div class="flex start margin">
+            &#169; Szymon Słowik
+        </div>
+        <div class="flex start margin">
+            Contact: pol321321321@gmail.com
+        </div>
     </div>
 </body>
 </html>
